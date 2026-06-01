@@ -1,0 +1,173 @@
+/// status : "ok"
+/// totalResults : 46
+/// articles : [{"source":{"id":"the-wall-street-journal","name":"The Wall Street Journal"},"author":"WSJ","title":"China Is Exporting Its Factories Across the World and Spooking the Competition - WSJ","description":null,"url":"https://www.wsj.com/business/autos/china-is-exporting-its-factories-across-the-world-and-spooking-the-competition-39e63291","urlToImage":null,"publishedAt":"2026-05-28T03:00:00Z","content":null},{"source":{"id":"the-wall-street-journal","name":"The Wall Street Journal"},"author":"WSJ","title":"Meta Starts Rollout of Subscriptions for Facebook, Instagram - WSJ","description":null,"url":"https://www.wsj.com/tech/meta-starts-rollout-of-subscriptions-for-facebook-instagram-9f00821f","urlToImage":null,"publishedAt":"2026-05-28T02:16:00Z","content":null},{"source":{"id":null,"name":"CNBC"},"author":"Dylan Butts","title":"CNBC Daily Open: Oil falls on Iran peace hopes — then U.S. launches airstrikes - CNBC","description":"Global markets rally as investors continue to price in Middle East de-escalation.","url":"https://www.cnbc.com/2026/05/28/us-reportedly-carries-out-new-airstrikes-on-iran-.html","urlToImage":"https://image.cnbcfm.com/api/v1/image/108310969-1779411811226-gettyimages-2277302703-_s012723_xakvqsrl.jpeg?v=1779412052&w=1920&h=1080","publishedAt":"2026-05-28T01:46:00Z","content":"Hello, this is Dylan Butts writing to you from Singapore. Welcome to today's edition of the Daily Open newsletter.\r\nThe ebb and flow of U.S.-Iran talks continued to steer markets on Wednesday, sendin… [+3647 chars]"},{"source":{"id":"the-wall-street-journal","name":"The Wall Street Journal"},"author":"WSJ","title":"Exclusive | The Trump Administration Is in Talks to Fund U.S. Drone Companies - WSJ","description":null,"url":"https://www.wsj.com/politics/national-security/trump-us-drone-company-funding-cadef1f7","urlToImage":null,"publishedAt":"2026-05-28T01:00:00Z","content":null},{"source":{"id":"techcrunch","name":"TechCrunch"},"author":"Amanda Silberling","title":"Google engineer charged with insider trading after making $1.2M on Polymarket - TechCrunch","description":"According to the complaint, a Google engineer risked over $2.7 million on wagers related to Google's 2025 Year in Search campaign.","url":"https://techcrunch.com/2026/05/27/google-engineer-charged-with-insider-trading-after-making-1-2m-on-polymarket/","urlToImage":"https://techcrunch.com/wp-content/uploads/2026/05/GettyImages-2277777336.jpg?resize=1200,800","publishedAt":"2026-05-28T00:45:37Z","content":"The U.S. Justice Department charged Google software engineer Michele Spagnuolo with insider trading, alleging the employee made $1.2 million trading on Polymarket based on confidential business infor… [+2369 chars]"},{"source":{"id":null,"name":"Yahoo Entertainment"},"author":"MICHAEL CASEY","title":"Fair housing groups file lawsuit arguing a federal rule change removes protections - Yahoo","description":"Fair housing organizations filed a lawsuit Wednesday over a federal rule change that they say would reverse decades of lending protections and open the door ...","url":"https://www.yahoo.com/news/politics/articles/fair-housing-groups-file-lawsuit-224542475.html","urlToImage":"https://s.yimg.com/ny/api/res/1.2/SaWfv6r0DdrGd0GcD5MtDQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04MDA7Y2Y9d2VicA--/https://media.zenfs.com/en/ap.org/e2a927660979a1cb37924a72ed7e46b6","publishedAt":"2026-05-27T22:45:42Z","content":"Fair housing organizations filed a lawsuit Wednesday over a federal rule change that they say would reverse decades of lending protections and open the door to discrimination against Black people, La… [+3681 chars]"},{"source":{"id":null,"name":"Investor's Business Daily"},"author":null,"title":"Salesforce Earnings, Revenue Beat. Software Stock Falls On Guidance. - Investor's Business Daily","description":"Salesforce stock fell on disappointing guidance while Q1 earnings and revenue beat estimates as artificial intelligence products gained traction.","url":"https://www.investors.com/news/technology/salesforce-stock-crm-salesforce-earnings-q12026/","urlToImage":"https://www.investors.com/wp-content/uploads/2019/02/stock-Salesforce-07-shutter.jpg","publishedAt":"2026-05-27T22:11:00Z","content":"Information in Investors Business Daily is for informational and educational purposes only and should not be construed as an offer, recommendation, solicitation, or rating to buy or sell securities. … [+1064 chars]"},{"source":{"id":null,"name":"MarketWatch"},"author":"Joy Wiltermuth, Frances Yue, Victor Reklaitis, Robert Schroeder, Joseph Adinolfi, Jamie Chisholm, Steve Goldstein, Nora Redmond","title":"Stock Market Today: Dow, S&P 500 and Nasdaq close at record highs on hopes for Iran war ending; oil prices drop; Micron extends epic run - MarketWatch","description":"The U.S. market action on Wednesday.","url":"https://www.marketwatch.com/livecoverage/stock-market-today-dow-s-p-500-nasdaq-oil-prices-us-iran-peace-deal","urlToImage":"https://images.mktw.net/im-51746529/social","publishedAt":"2026-05-27T21:21:00Z","content":null},{"source":{"id":null,"name":"Barron's"},"author":"Adam Levine, Kit Norton","title":"Snowflake Stock Jumps 34%. How Amazon and an Earnings Beat Are Fueling the Gains. - Barron's","description":"Snowflake is counting on its revenue model and data  warehousing to flourish with the rise of AI agents. The company reported earnings after the close Wednesday.","url":"https://www.barrons.com/articles/snowflake-earnings-stock-price-add58633","urlToImage":"https://images.barrons.com/im-21045400/social","publishedAt":"2026-05-27T20:55:00Z","content":"Shares ofSnowflakesoared after the data warehousing companys fiscal first-quarter profit handily surpassed Wall Streets expectations. The company separately announced it has expanded its collaboratio… [+208 chars]"},{"source":{"id":null,"name":"Marvell.com"},"author":null,"title":"Marvell Technology, Inc. Reports First Quarter of Fiscal Year 2027 Financial Results - Marvell Technology","description":"Q1 Net Revenue: $2.418 billion, a new record, grew by 28% year-on-year\n\n\n\nQ1 Gross Margin: 52.1% GAAP gross margin; 58.9% non-GAAP gross…...","url":"https://investor.marvell.com/news-events/press-releases/detail/1023/marvell-technology-inc-reports-first-quarter-of-fiscal-year-2027-financial-results","urlToImage":"https://d1io3yog0oux5.cloudfront.net/_4a8b64d9408f004452adf953885561be/marvell/db/3727/33626/social_image_resized.jpg","publishedAt":"2026-05-27T20:06:52Z","content":"<ul><li>\r\nQ1 Net Revenue: $2.418 billion, a new record, grew by 28% year-on-year\r\n</li><li>\r\nQ1 Gross Margin: 52.1% GAAP gross margin; 58.9% non-GAAP gross margin\r\n</li><li>\r\nQ1 Diluted income per sh… [+50514 chars]"},{"source":{"id":"ars-technica","name":"Ars Technica"},"author":"Ashley Belanger","title":"Nvidia bets $150B on Taiwan as Trump’s plan to make US an AI hub backfires - Ars Technica","description":"Nvidia will invest $150 billion a year to make Taiwan an AI “epicenter.”...","url":"https://arstechnica.com/tech-policy/2026/05/nvidia-ceo-wants-taiwan-to-be-center-of-ai-revolution-not-us/","urlToImage":"https://cdn.arstechnica.net/wp-content/uploads/2026/05/GettyImages-2212801534-2-1024x648.jpg","publishedAt":"2026-05-27T19:59:40Z","content":null},{"source":{"id":null,"name":"KUOW News and Information"},"author":"Monica Nickelsburg\n            \n                \n                  May 27, 2026\n                    /\n                    12:37 pm","title":"Mark Zuckerberg’s mega yacht docks in Seattle in the wake of Meta layoffs - KUOW","description":"Mark Zuckerberg’s enormous yacht is moored near Meta’s Seattle office, where hundreds of people just lost their jobs.","url":"https://www.kuow.org/stories/mark-zuckerberg-s-mega-yacht-docks-in-seattle-in-the-wake-of-layoffs","urlToImage":"https://kuow-prod.imgix.net/store/cb3629a839a123313a64fde2a4d99358.jpg?fm=jpg&fit=max&w=1200&h=628&q=80","publishedAt":"2026-05-27T19:37:54Z","content":"Mark Zuckerbergs enormous yacht is moored near Metas Seattle office, where hundreds of people just lost their jobs.\r\nAs of Wednesday afternoon, the $300 million, 387-foot Launchpad was stationed on W… [+1423 chars]"},{"source":{"id":null,"name":"Spaceflight Now"},"author":null,"title":"FAA requires SpaceX-led mishap investigation before resumption of Starship launches - Spaceflight Now","description":null,"url":"https://spaceflightnow.com/2026/05/27/faa-requires-spacex-led-mishap-investigation-before-resumption-of-starship-launches/","urlToImage":null,"publishedAt":"2026-05-27T19:28:22Z","content":"A closeup shot of SpaceX’s Super Heavy booster, tail number Booster 19, during the initial moments of ascent on the Starship Flight 12 mission on May 22, 2026. Image: SpaceX\r\nFAA requires SpaceX-led … [+6464 chars]"},{"source":{"id":"business-insider","name":"Business Insider"},"author":"Charles Rollet","title":"Silicon Valley is spending billions on AI tokens and nobody can agree if it's working - Business Insider","description":"Uber COO Andrew Macdonald criticizes tokenmaxxing amid rising AI costs and limited productivity, sparking debate in Silicon Valley.","url":"https://www.businessinsider.com/tokenmaxxing-debate-uber-exec-viral-ai-costs-2026-5","urlToImage":"https://i.insider.com/6a17363cb4fb977f35980534?width=1200&format=jpeg","publishedAt":"2026-05-27T19:23:02Z","content":"Silicon Valley's backlash against tokenmaxxing has officially begun.\r\nUber COO Andrew Macdonald said in an interview released last week that he hasn't observed direct productivity improvements from i… [+2958 chars]"},{"source":{"id":null,"name":"NPR"},"author":"","title":"More people are going hungry now than at the height of the pandemic - NPR","description":"Food insecurity affects more families now than during the coronavirus pandemic, according to a new survey from the Federal Reserve Bank of New York.","url":"https://www.npr.org/2026/05/27/nx-s1-5836441/food-insecurity-economy-new-york-fed","urlToImage":"https://npr.brightspotcdn.com/dims3/default/strip/false/crop/7562x4254+0+395/resize/1400/quality/85/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F05%2F56%2Fc22d4f3e4fd6b7772be7c2b0cecb%2Fgettyimages-2247384282.jpg","publishedAt":"2026-05-27T19:12:53Z","content":"More people in the United States are going hungry now than during the depths of the pandemic six years ago. \r\nA survey released Wednesday by the Federal Reserve Bank of New York found higher levels o… [+3310 chars]"},{"source":{"id":null,"name":"Sportsmediawatch.com"},"author":"Derek Futterman","title":"News: Paramount-WBD, FIFA World Cup, NFL and more - Sports Media Watch","description":"Paramount reportedly appears closer to receiving regulatory approval for its WBD merger transaction; and more sports media news.","url":"https://www.sportsmediawatch.com/2026/05/paramount-wbd-merger-fox-fifa-world-cup-nfl-schedule-expansion/","urlToImage":"https://www.sportsmediawatch.com/wp-content/uploads/2024/08/Paramount-Office-Times-Square-Aug-20-2024-scaled-e1724693073900.jpg","publishedAt":"2026-05-27T18:12:16Z","content":"Paramount reportedly appears closer to receiving regulatory approval for its WBD merger transaction; Fox is said to be paying less than $500 million for rights to the FIFA World Cup; and NFL expansio… [+8848 chars]"},{"source":{"id":null,"name":"Yahoo Entertainment"},"author":"Khac Phu Nguyen","title":"SK Hynix Surges 1,000% As AI Memory Stocks Hit $1 Trillion - Yahoo Finance","description":"SK Hynix and Micron rally as investors bet AI-driven HBM shortages could last through 2027.","url":"https://finance.yahoo.com/sectors/technology/articles/sk-hynix-surges-1-000-172746881.html","urlToImage":"https://s.yimg.com/cv/apiv2/cv/apiv2/social/images/yahoo-finance-default-logo.png","publishedAt":"2026-05-27T17:27:46Z","content":"This article first appeared on GuruFocus.\r\nSK Hynix (HXSCL) and Micron Technology (NASDAQ:MU) have pushed into the $1 trillion market-cap club for the first time, as investors continue to reprice the… [+1832 chars]"},{"source":{"id":null,"name":"wdwnt.com"},"author":"Brooke","title":"Papa Johns Bringing Pizza Planet to Life With Immersive ‘Toy Story 5’ Pop-Up Experiences - WDW News Today","description":"Papa Johns opening a new series of immersive Pizza Planet pop-up experiences inspired by Disney and Pixar’s upcoming Toy Story 5.","url":"https://wdwnt.com/2026/05/papa-johns-bringing-pizza-planet-to-life-with-immersive-toy-story-5-pop-up-experiences/","urlToImage":"https://r2-media.wdwnt.com/2026/05/image-379.png","publishedAt":"2026-05-27T16:38:00Z","content":"Papa Johns is taking fans “to infinity and beyond” with a new series of immersive Pizza Planet pop-up experiences inspired by Disney and Pixar’s upcoming Toy Story 5.\r\nThe limited-time experiences ar… [+2621 chars]"}]
+
+class HeadLineNews {
+  HeadLineNews({
+      String? status, 
+      num? totalResults, 
+      List<Articles>? articles,}){
+    _status = status;
+    _totalResults = totalResults;
+    _articles = articles;
+}
+
+  HeadLineNews.fromJson(dynamic json) {
+    _status = json['status'];
+    _totalResults = json['totalResults'];
+    if (json['articles'] != null) {
+      _articles = [];
+      json['articles'].forEach((v) {
+        _articles?.add(Articles.fromJson(v));
+      });
+    }
+  }
+  String? _status;
+  num? _totalResults;
+  List<Articles>? _articles;
+HeadLineNews copyWith({  String? status,
+  num? totalResults,
+  List<Articles>? articles,
+}) => HeadLineNews(  status: status ?? _status,
+  totalResults: totalResults ?? _totalResults,
+  articles: articles ?? _articles,
+);
+  String? get status => _status;
+  num? get totalResults => _totalResults;
+  List<Articles>? get articles => _articles;
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['status'] = _status;
+    map['totalResults'] = _totalResults;
+    if (_articles != null) {
+      map['articles'] = _articles?.map((v) => v.toJson()).toList();
+    }
+    return map;
+  }
+
+}
+
+/// source : {"id":"the-wall-street-journal","name":"The Wall Street Journal"}
+/// author : "WSJ"
+/// title : "China Is Exporting Its Factories Across the World and Spooking the Competition - WSJ"
+/// description : null
+/// url : "https://www.wsj.com/business/autos/china-is-exporting-its-factories-across-the-world-and-spooking-the-competition-39e63291"
+/// urlToImage : null
+/// publishedAt : "2026-05-28T03:00:00Z"
+/// content : null
+
+class Articles {
+  Articles({
+      Source? source, 
+      String? author, 
+      String? title, 
+      dynamic description, 
+      String? url, 
+      dynamic urlToImage, 
+      String? publishedAt, 
+      dynamic content,}){
+    _source = source;
+    _author = author;
+    _title = title;
+    _description = description;
+    _url = url;
+    _urlToImage = urlToImage;
+    _publishedAt = publishedAt;
+    _content = content;
+}
+
+  Articles.fromJson(dynamic json) {
+    _source = json['source'] != null ? Source.fromJson(json['source']) : null;
+    _author = json['author'];
+    _title = json['title'];
+    _description = json['description'];
+    _url = json['url'];
+    _urlToImage = json['urlToImage'];
+    _publishedAt = json['publishedAt'];
+    _content = json['content'];
+  }
+  Source? _source;
+  String? _author;
+  String? _title;
+  dynamic _description;
+  String? _url;
+  dynamic _urlToImage;
+  String? _publishedAt;
+  dynamic _content;
+Articles copyWith({  Source? source,
+  String? author,
+  String? title,
+  dynamic description,
+  String? url,
+  dynamic urlToImage,
+  String? publishedAt,
+  dynamic content,
+}) => Articles(  source: source ?? _source,
+  author: author ?? _author,
+  title: title ?? _title,
+  description: description ?? _description,
+  url: url ?? _url,
+  urlToImage: urlToImage ?? _urlToImage,
+  publishedAt: publishedAt ?? _publishedAt,
+  content: content ?? _content,
+);
+  Source? get source => _source;
+  String? get author => _author;
+  String? get title => _title;
+  dynamic get description => _description;
+  String? get url => _url;
+  dynamic get urlToImage => _urlToImage;
+  String? get publishedAt => _publishedAt;
+  dynamic get content => _content;
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    if (_source != null) {
+      map['source'] = _source?.toJson();
+    }
+    map['author'] = _author;
+    map['title'] = _title;
+    map['description'] = _description;
+    map['url'] = _url;
+    map['urlToImage'] = _urlToImage;
+    map['publishedAt'] = _publishedAt;
+    map['content'] = _content;
+    return map;
+  }
+
+}
+
+/// id : "the-wall-street-journal"
+/// name : "The Wall Street Journal"
+
+class Source {
+  Source({
+      String? id, 
+      String? name,}){
+    _id = id;
+    _name = name;
+}
+
+  Source.fromJson(dynamic json) {
+    _id = json['id'];
+    _name = json['name'];
+  }
+  String? _id;
+  String? _name;
+Source copyWith({  String? id,
+  String? name,
+}) => Source(  id: id ?? _id,
+  name: name ?? _name,
+);
+  String? get id => _id;
+  String? get name => _name;
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['id'] = _id;
+    map['name'] = _name;
+    return map;
+  }
+
+}
