@@ -5,9 +5,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:newsspp/Model/SportsModel.dart';
 import 'package:newsspp/screens/Catagories.dart';
 import 'package:http/http.dart' as http;
-import 'package:newsspp/screens/news.dart';
 
-class Sports {
+class CatagoriesLogic {
   static List<Results> allNews = [];
   static ScrollController scrollController =ScrollController();
   static bool isLoading = false;
@@ -37,7 +36,7 @@ class Sports {
 
     if(responce.statusCode == 200)
       {
-        log("Sports Api Succesfull");
+        log("Catagories Api Succesfull");
        try
            {
              final data = jsonDecode(responce.body.toString());

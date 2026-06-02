@@ -19,89 +19,107 @@ class _HomepageState extends State<Homepage> {
     Homeinit();
     NewsHeadLine.FetchHeadlineNews().then((value) {
       setState(() {});
-    });  }
+    });
+  }
 
   void Homeinit() {
     Homelogic.FetchApi().then((value) {
       setState(() {});
     });
 
-    Homelogic.scrollController.addListener(() {
-      if (Homelogic.scrollController.position.pixels >=
-          Homelogic.scrollController.position.maxScrollExtent - 200) {
-        Homelogic.FetchingMoreData().then((value) {
-          setState(() {});
-        });
-      }
+    Homelogic.setUpPagination(RefreshUi: (){
+      setState(() {
+
+      });
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-      body: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Column(
-          children: [
-            Align(
-              alignment: Alignment.topLeft,
-                child: Text("News HeadLines:",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),
-                )
-            ),
-            NewsHeadLine.HeadLinesNews.isEmpty && NewsHeadLine.isLoading
-                ? headLineshimmer()
-                : Container(
-                    height: 350,
-                    width: double.infinity,
-                    child: PageView.builder(
-                      scrollDirection: Axis.horizontal,
-                      controller: NewsHeadLine.pageController,
-                      onPageChanged: (index){
-                        if(index >= NewsHeadLine.HeadLinesNews.length -3){
-                          NewsHeadLine.FetchMoreData();
-                        }
-                      },
-                      itemCount: NewsHeadLine.isLoading
-                          ? NewsHeadLine.HeadLinesNews.length + 1
-                          : NewsHeadLine.HeadLinesNews.length,
-                      itemBuilder: (context, HoriIndex) {
-                        if(HoriIndex == NewsHeadLine.HeadLinesNews.length){
-                          return Center(child: CircularProgressIndicator(),);
-                        }if(NewsHeadLine.HeadLinesNews.isEmpty || NewsHeadLine.HeadLinesNews == null){
-                          return Center(child: Text("Data is not Available"),);
-                        }
-                        return headlineContent(index: HoriIndex);
-                      },
-                    ),
-                  ),
-            Align(
+      body: RefreshIndicator.adaptive(
+        onRefresh: ()async{
+          Homelogic.Reset();
+          NewsHeadLine.Reset();
+         await Future.wait([
+            NewsHeadLine.FetchHeadlineNews(),
+          Homelogic.FetchApi()
+          ]);
+          if(mounted){
+            setState(() {
+            });
+          }
+        },
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
+            children: [
+              Align(
                 alignment: Alignment.topLeft,
-                child: Text("Latest News:",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),)),
-            Expanded(
-              child: Homelogic.allnews.isEmpty && Homelogic.isLoading
-                  ? Shimmerwidget()
+                child: Text(
+                  "News HeadLines:",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                ),
+              ),
+              NewsHeadLine.HeadLinesNews.isEmpty && NewsHeadLine.isLoading
+                  ? headLineshimmer()
                   : Container(
-                      child: ListView.builder(
-                        controller: Homelogic.scrollController,
-                        itemCount: Homelogic.isLoading
-                            ? Homelogic.allnews.length + 1
-                            : Homelogic.allnews.length,
-                        itemBuilder: (context, index) {
-                          if (index == Homelogic.allnews.length) {
-                            return Center(
-                              child: CircularProgressIndicator.adaptive(),
-                            );
+                      height: 350,
+                      width: double.infinity,
+                      child: PageView.builder(
+                        scrollDirection: Axis.horizontal,
+                        controller: NewsHeadLine.pageController,
+                        onPageChanged: (index) {
+                          if (index >= NewsHeadLine.HeadLinesNews.length - 3) {
+                            NewsHeadLine.FetchMoreData();
                           }
-                          return LatedNewsContent(index: index);
+                        },
+                        itemCount: NewsHeadLine.isLoading
+                            ? NewsHeadLine.HeadLinesNews.length + 1
+                            : NewsHeadLine.HeadLinesNews.length,
+                        itemBuilder: (context, HoriIndex) {
+                          if (HoriIndex == NewsHeadLine.HeadLinesNews.length) {
+                            return Center(child: CircularProgressIndicator());
+                          }
+                          if (NewsHeadLine.HeadLinesNews.isEmpty ||
+                              NewsHeadLine.HeadLinesNews == null) {
+                            return Center(child: Text("Data is not Available"));
+                          }
+                          return headlineContent(index: HoriIndex);
                         },
                       ),
                     ),
-            ),
-          ],
+              Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  "Latest News:",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                ),
+              ),
+              Expanded(
+                child: Homelogic.allnews.isEmpty && Homelogic.isLoading
+                    ? Shimmerwidget()
+                    : Container(
+                        child: ListView.builder(
+                          controller: Homelogic.scrollController,
+                          itemCount: Homelogic.isLoading
+                              ? Homelogic.allnews.length + 1
+                              : Homelogic.allnews.length,
+                          itemBuilder: (context, index) {
+                            if (index == Homelogic.allnews.length) {
+                              return Center(
+                                child: CircularProgressIndicator.adaptive(),
+                              );
+                            }
+                            return LatestNewsContent(index: index);
+                          },
+                        ),
+                      ),
+              ),
+            ],
+          ),
         ),
       ),
-
     );
   }
 }
@@ -112,8 +130,13 @@ class headlineContent extends StatelessWidget {
   headlineContent({required this.index});
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context)=>Detail(index: index, isHeadline: true)));
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => Detail(index: index, isHeadline: true),
+          ),
+        );
       },
       child: Stack(
         children: [
@@ -121,7 +144,7 @@ class headlineContent extends StatelessWidget {
             height: 300,
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadiusGeometry.circular(30),
               image: DecorationImage(
                 image: NetworkImage(
                   NewsHeadLine.HeadLinesNews[index].urlToImage.toString() ?? "",
@@ -133,7 +156,8 @@ class headlineContent extends StatelessWidget {
           Container(
             height: 300,
             width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(color: Colors.black.withOpacity(0.4)),
+            decoration: BoxDecoration(color: Colors.black.withOpacity(0.4),
+            borderRadius: BorderRadiusGeometry.circular(30)),
           ),
           Positioned(
             left: 20,
@@ -168,51 +192,66 @@ class headlineContent extends StatelessWidget {
   }
 }
 
-class LatedNewsContent extends StatelessWidget {
+class LatestNewsContent extends StatelessWidget {
   int index;
 
-  LatedNewsContent({required this.index});
+  LatestNewsContent({required this.index});
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap:(){
-        Navigator.push(context, MaterialPageRoute(builder: (context)=>Detail(index: index,isHeadline: false,)));
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => Detail(index: index, isHeadline: false),
+          ),
+        );
       },
-      child: Card(
-        child: Row(
-          children: [
-            Container(
-              height: 100,
-              width: 100,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: NetworkImage(
-                    Homelogic.allnews[index].urlToImage.toString() ?? "",
+      child: SizedBox(
+        height: 200,
+        child: Card(
+          child: Row(
+            children: [
+              Container(
+                height: 150,
+                width: 110,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  image: DecorationImage(
+                    image: NetworkImage(
+                      Homelogic.allnews[index].urlToImage ??
+                          "https://www.dreamstime.com/stock-illustration-not-available-red-rubber-stamp-over-white-background-image87242466",
+                    ),
+                    fit: BoxFit.cover,
                   ),
                 ),
               ),
-            ),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Column(
-                  children: [
-                    Text(
-                      Homelogic.allnews[index].title.toString(),
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                    Text(
-                      Homelogic.allnews[index].description.toString(),
-                      maxLines: 3,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ],
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Column(
+                    children: [
+                      Text(
+                        Homelogic.allnews[index].title.toString(),
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      Text(
+                        Homelogic.allnews[index].description.toString(),
+                        maxLines: 3,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(fontSize: 18),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

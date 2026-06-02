@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../screens/Catagories.dart';
 import '../screens/HomePage.dart';
 import '../screens/detailNews.dart';
-import '../screens/news.dart';
 class Home extends StatefulWidget {
   const Home({super.key});
 
@@ -32,10 +31,11 @@ class _HomeState extends State<Home> {
           currentIndex: _SelectedIndex,
           onTap: _BottomNavigationBar,
           type: BottomNavigationBarType.fixed,
+          fixedColor: Colors.lightBlueAccent,
           items:[
-            BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home") ,
-            BottomNavigationBarItem(icon: Icon(Icons.category),label: "NewsCategory"),
-            BottomNavigationBarItem(icon: Icon(Icons.video_label_rounded),label: "NewsVideo"),
+            BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home,") ,
+            BottomNavigationBarItem(icon: Icon(Icons.category),label: "Category"),
+            BottomNavigationBarItem(icon: Icon(Icons.newspaper,),label: "News"),
           ] ),
 
       body: _pages[_SelectedIndex],

@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:newsspp/Model/SportsModel.dart';
 import 'package:newsspp/screens/CatagoriesDetail.dart';
-import 'package:newsspp/screens/HomePage.dart';
-import 'package:newsspp/screens/news.dart';
+import 'package:newsspp/widgets/Text.dart';
 import 'package:newsspp/widgets/shimmerWidget.dart';
 import 'package:newsspp/widgets/widget.dart';
 
-import '../Logics/Catagory/spots.dart';
+import '../Logics/Catagory/CatagoriesLogic.dart';
 
 class Catagories extends StatefulWidget {
   const Catagories({super.key});
@@ -20,247 +18,281 @@ class _CatagoriesState extends State<Catagories> {
   void initState() {
     super.initState();
     SelectedCatagory = "India";
-    Sports.StoreCatagory(SelectedCatagory:SelectedCatagory);
-    Sports.reset();
-    Sports.FetchData().then((_) {
-      if(mounted) {
+    CatagoriesLogic.StoreCatagory(SelectedCatagory: SelectedCatagory);
+    CatagoriesLogic.reset();
+    CatagoriesLogic.FetchData().then((_) {
+      if (mounted) {
         setState(() {});
       }
     });
 
-    Sports.pagination(
+    CatagoriesLogic.pagination(
       refreshUI: () {
-        if(mounted){
-        setState(() {});
-      }
-      }
+        if (mounted) {
+          setState(() {});
+        }
+      },
     );
-
   }
 
-  void Dispose() {
-    Sports.scrollController.dispose();
-    super.dispose();
-  }
 
   String SelectedCatagory = "";
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Container(
-            height: 220,
-            width: double.infinity,
-            child: Card(
-              elevation:4,
-              child: GridView.count(
-              physics: NeverScrollableScrollPhysics(),
-                crossAxisCount: 4,
-                children: [
-                  CustomWidget.choiceChip(
-                    value: "India",
-                    valueChanged: (selected) {
-                      if (selected) {
-                        setState(() {
-                          SelectedCatagory = "India";
-                          Sports.StoreCatagory(SelectedCatagory: SelectedCatagory);
-                          Sports.reset();
-                          Sports.FetchData().then((_){
-                            if(mounted){
-                              setState(() {
-              
-                              });
-                            }
-                          });
-                        });
-                      }
-                    },
-                    selected: SelectedCatagory,
-                  ),
-                  CustomWidget.choiceChip(
-                    value: "Sports",
-                    selected: SelectedCatagory,
-                    valueChanged: (selected) {
-                      if (selected) {
-                        SelectedCatagory = "Sports";
-                        Sports.StoreCatagory(SelectedCatagory: SelectedCatagory);
-                        Sports.reset();
-              
-                        Sports.FetchData().then((_){
-                              if(mounted){
+      body: RefreshIndicator.adaptive(
+        onRefresh: ()async{
+          CatagoriesLogic.reset();
+          await CatagoriesLogic.FetchData();
+          if(mounted){
+            setState(() {
+            });
+          }
+        },
+        child: Column(
+          children: [
+            Container(
+              height: 220,
+              width: double.infinity,
+              child: Card(
+                elevation: 4,
+                child: GridView.count(
+                  physics: NeverScrollableScrollPhysics(),
+                  crossAxisCount: 4,
+                  children: [
+                    CustomWidget.choiceChip(
+                      value: "India",
+                      valueChanged: (selected) {
+                        if (selected) {
+                          setState(() {
+                            SelectedCatagory = "India";
+                            CatagoriesLogic.StoreCatagory(
+                              SelectedCatagory: SelectedCatagory,
+                            );
+                            CatagoriesLogic.reset();
+                            CatagoriesLogic.FetchData().then((_) {
+                              if (mounted) {
                                 setState(() {});
                               }
-                        });
-                      }
-                    },
-                  ),
-                  CustomWidget.choiceChip(
-                    value: "Business",
-                    valueChanged: (selected) {
-                      if (selected) {
-                        setState(() {
-                          SelectedCatagory = "Business";
-                          Sports.StoreCatagory(SelectedCatagory: SelectedCatagory);
-                          Sports.reset();
-                          Sports.FetchData().then((_){
-                            if(mounted){
-                              setState(() {
-                              });
-                            }
+                            });
                           });
-              
-                        });
-                      }
-                    },
-                    selected: SelectedCatagory,
-                  ),
-                  CustomWidget.choiceChip(
-                    value: "IT",
-                    valueChanged: (selected) {
-                      if (selected) {
-                        setState(() {
-                          SelectedCatagory = "IT";
-              
-                          Sports.StoreCatagory(SelectedCatagory: SelectedCatagory);
-                          Sports.reset();
-                          Sports.FetchData().then((_){
-                            if(mounted){
-                              setState(() {
-                              });
-                            }
-                          });
-                        });
-                      }
-                    },
-                    selected: SelectedCatagory,
-                  ),
-                  CustomWidget.choiceChip(
-                    value: "US",
-                    valueChanged: (selected) {
-                      if (selected) {
-                        setState(() {
-                          SelectedCatagory = "US";
-                          Sports.StoreCatagory(SelectedCatagory: SelectedCatagory);
-                          Sports.reset();
-                          Sports.FetchData().then((_){
-                            if(mounted){
-                              setState(() {
-                              });
-                            }
-                          });
-                        });
-                      }
-                    },
-                    selected: SelectedCatagory,
-                  ),
-                  CustomWidget.choiceChip(
-                    value: "Crypto",
-                    valueChanged: (selected) {
-                      if (selected) {
-                        setState(() {
-                          SelectedCatagory = "Crypto";
-                          Sports.StoreCatagory(SelectedCatagory: SelectedCatagory);
-                          Sports.reset();
-                          Sports.FetchData().then((_){
-                            if(mounted){
-                              setState(() {
-                              });
-                            }
-                          });
-                        });
-                      }
-                    },
-                    selected: SelectedCatagory,
-                  ),
-                  CustomWidget.choiceChip(
-                    value: "Share Market",
-                    valueChanged: (selected) {
-                      if (selected) {
-                        setState(() {
-                          SelectedCatagory = "ShareMarket";
-                          Sports.StoreCatagory(SelectedCatagory: SelectedCatagory);
-                          Sports.reset();
-                          Sports.FetchData().then((_){
-                            if(mounted){
-                              setState(() {
-              
-                              });
-                            }
-                          });
-                        });
-                      }
-                    },
-                    selected: SelectedCatagory,
-                  ),
-                ],
-              ),
-            ),
-          ),
-
-          Expanded(
-            child: Container(
-              width: double.infinity,
-              child: Sports.allNews.isEmpty
-                  ? Shimmerwidget()
-                  : ListView.builder(
-                      controller: Sports.scrollController,
-                      itemCount:
-                          Sports.allNews.length + (Sports.isLoading ? 1 : 0),
-                      itemBuilder: (context, index) {
-                        if (index == Sports.allNews.length) {
-
-                          return Center(child: CircularProgressIndicator());
                         }
-                        return Cata(index: index,);
+                      },
+                      selected: SelectedCatagory,
+                    ),
+                    CustomWidget.choiceChip(
+                      value: "Sports",
+                      selected: SelectedCatagory,
+                      valueChanged: (selected) {
+                        if (selected) {
+                          SelectedCatagory = "Sports";
+                          CatagoriesLogic.StoreCatagory(
+                            SelectedCatagory: SelectedCatagory,
+                          );
+                          CatagoriesLogic.reset();
+
+                          CatagoriesLogic.FetchData().then((_) {
+                            if (mounted) {
+                              setState(() {});
+                            }
+                          });
+                        }
                       },
                     ),
+                    CustomWidget.choiceChip(
+                      value: "Business",
+                      valueChanged: (selected) {
+                        if (selected) {
+                          setState(() {
+                            SelectedCatagory = "Business";
+                            CatagoriesLogic.StoreCatagory(
+                              SelectedCatagory: SelectedCatagory,
+                            );
+                            CatagoriesLogic.reset();
+                            CatagoriesLogic.FetchData().then((_) {
+                              if (mounted) {
+                                setState(() {});
+                              }
+                            });
+                          });
+                        }
+                      },
+                      selected: SelectedCatagory,
+                    ),
+                    CustomWidget.choiceChip(
+                      value: "IT",
+                      valueChanged: (selected) {
+                        if (selected) {
+                          setState(() {
+                            SelectedCatagory = "IT";
+
+                            CatagoriesLogic.StoreCatagory(
+                              SelectedCatagory: SelectedCatagory,
+                            );
+                            CatagoriesLogic.reset();
+                            CatagoriesLogic.FetchData().then((_) {
+                              if (mounted) {
+                                setState(() {});
+                              }
+                            });
+                          });
+                        }
+                      },
+                      selected: SelectedCatagory,
+                    ),
+                    CustomWidget.choiceChip(
+                      value: "US",
+                      valueChanged: (selected) {
+                        if (selected) {
+                          setState(() {
+                            SelectedCatagory = "US";
+                            CatagoriesLogic.StoreCatagory(
+                              SelectedCatagory: SelectedCatagory,
+                            );
+                            CatagoriesLogic.reset();
+                            CatagoriesLogic.FetchData().then((_) {
+                              if (mounted) {
+                                setState(() {});
+                              }
+                            });
+                          });
+                        }
+                      },
+                      selected: SelectedCatagory,
+                    ),
+                    CustomWidget.choiceChip(
+                      value: "Crypto",
+                      valueChanged: (selected) {
+                        if (selected) {
+                          setState(() {
+                            SelectedCatagory = "Crypto";
+                            CatagoriesLogic.StoreCatagory(
+                              SelectedCatagory: SelectedCatagory,
+                            );
+                            CatagoriesLogic.reset();
+                            CatagoriesLogic.FetchData().then((_) {
+                              if (mounted) {
+                                setState(() {});
+                              }
+                            });
+                          });
+                        }
+                      },
+                      selected: SelectedCatagory,
+                    ),
+                    CustomWidget.choiceChip(
+                      value: "ShareMarket",
+                      valueChanged: (selected) {
+                        if (selected) {
+                          setState(() {
+                            SelectedCatagory = "ShareMarket";
+                            CatagoriesLogic.StoreCatagory(
+                              SelectedCatagory: SelectedCatagory,
+                            );
+                            CatagoriesLogic.reset();
+                            CatagoriesLogic.FetchData().then((_) {
+                              if (mounted) {
+                                setState(() {});
+                              }
+                            });
+                          });
+                        }
+                      },
+                      selected: SelectedCatagory,
+                    ),
+
+                  ],
+                ),
+              ),
             ),
-          ),
-        ],
+
+            Expanded(
+              child: Container(
+                width: double.infinity,
+                child: CatagoriesLogic.allNews.isEmpty
+                    ? Shimmerwidget()
+                    : ListView.builder(
+                        controller: CatagoriesLogic.scrollController,
+                        itemCount:
+                            CatagoriesLogic.allNews.length +
+                            (CatagoriesLogic.isLoading ? 1 : 0),
+                        itemBuilder: (context, index) {
+                          if (index == CatagoriesLogic.allNews.length) {
+                            return Center(child: CircularProgressIndicator());
+                          }
+                          return Cata(index: index);
+                        },
+                      ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
 }
 
 class Cata extends StatelessWidget {
-   var index;
+  var index;
   Cata({required this.index});
   @override
   Widget build(BuildContext context) {
-
     return Padding(
       padding: const EdgeInsets.all(5.0),
       child: InkWell(
-        onTap: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context)=>CDetail(index: index,)));
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => CDetail(index: index)),
+          );
         },
         child: Card(
-          child: Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: ListTile(
-              leading: Container(
-                height: 100,
-                width: 80,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  image: DecorationImage(
-                    image: NetworkImage(
-                      Sports.allNews[index].imageUrl.toString()
+          child: SizedBox(
+            height: 200,
+            child: Row(
+              children: [
+                Container(
+                  height: 150,
+                  width: 110,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    image: DecorationImage(
+                      image: NetworkImage(
+                        CatagoriesLogic.allNews[index].imageUrl ??
+                            "https://www.dreamstime.com/stock-illustration-not-available-red-rubber-stamp-over-white-background-image87242466",
+                      ),
+                      fit: BoxFit.cover,
                     ),
-                    fit: BoxFit.cover,
                   ),
                 ),
-              ),
-              title: Text(
-                Sports.allNews[index].title.toString(),
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-              ),
-              subtitle: Text(
-                Sports.allNews[index].description.toString(),
-                maxLines: 3,
-                overflow: TextOverflow.ellipsis,
-              ),
+                Expanded(
+                  child: Container(
+                    child: Column(
+                      children: [
+                        TextPadding(
+                          text:
+                              CatagoriesLogic.allNews[index].title ??
+                              "Tital is Not Available",
+                          fontSize: 20,
+                          padding: 10,
+                          isBold: true,
+                          lines: 2,
+                          isLines: true,
+                        ),
+                        TextPadding(
+                          text:
+                              CatagoriesLogic.allNews[index].description ??
+                              "Tital is Not Available",
+                          fontSize: 18,
+                          padding: 10,
+                          isBold: false,
+                          lines: 3,
+                          isLines: true,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         ),
@@ -268,4 +300,3 @@ class Cata extends StatelessWidget {
     );
   }
 }
-

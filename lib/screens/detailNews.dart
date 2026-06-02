@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:newsspp/Logics/NewsDetail/detailNews.dart';
+import 'package:newsspp/widgets/shimmerWidget.dart';
 
 class detailnews extends StatefulWidget {
   const detailnews({super.key});
@@ -27,8 +28,8 @@ class _detailnewsState extends State<detailnews> {
       },
     );
   }
-  void dispoce()
-  {
+  @override
+  void dispose() {
     detailNewsLogice.scrollController.dispose();
     super.dispose();
   }
@@ -37,19 +38,31 @@ class _detailnewsState extends State<detailnews> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Detail News")),
-      body: detailNewsLogice.isLoading
-          ? Center(child: CircularProgressIndicator())
-          : ListView.builder(
-              controller: detailNewsLogice.scrollController,
-              itemCount:
-                  detailNewsLogice.allNews.length + (detailNewsLogice.isLoading ? 1 : 0),
-              itemBuilder: (context, index) {
-                if (index == detailNewsLogice.allNews.length) {
-                  return Center(child: CircularProgressIndicator());
-                }
-                return NewsUI(index: index);
-              },
-            ),
+      body: RefreshIndicator.adaptive(
+        onRefresh: ()async{
+          detailNewsLogice.Reset();
+          await detailNewsLogice.FetchData();
+          if(mounted){
+            setState(() {
+            });
+          }
+
+        },
+        child: detailNewsLogice.allNews.isEmpty
+            ? ShimmerDetailNews()
+            : ListView.builder(
+                controller: detailNewsLogice.scrollController,
+                itemCount:
+                    detailNewsLogice.allNews.length +
+                    (detailNewsLogice.isLoading ? 1 : 0),
+                itemBuilder: (context, index) {
+                  if (index == detailNewsLogice.allNews.length) {
+                    return  Center(child: CircularProgressIndicator());
+                  }
+                  return NewsUI(index: index);
+                },
+              ),
+      ),
     );
   }
 }
@@ -61,21 +74,23 @@ class NewsUI extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
-        detailNewsLogice.openVideo(Enter_url: detailNewsLogice.allNews[index].link.toString());
+      onTap: () {
+        detailNewsLogice.openVideo(
+          Enter_url: detailNewsLogice.allNews[index].link.toString(),
+        );
       },
       child: Column(
         children: [
-          SizedBox(height: 20,),
+          SizedBox(height: 20),
           Card(
-            elevation: 5,
+            elevation: 8,
             child: Stack(
               children: [
-                Text(detailNewsLogice.allNews[index].title.toString()),
                 Container(
                   height: 300,
                   width: double.infinity,
                   decoration: BoxDecoration(
+                    borderRadius: BorderRadiusGeometry.circular(20),
                     image: DecorationImage(
                       image: NetworkImage(
                         detailNewsLogice.allNews[index].imageUrl ??
@@ -88,12 +103,15 @@ class NewsUI extends StatelessWidget {
                 Container(
                   height: 300,
                   width: double.infinity,
-                  color: Colors.black.withOpacity(0.4),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadiusGeometry.circular(20),
+                    color: Colors.black.withOpacity(0.3),
+                  ),
                 ),
                 Positioned(
                   left: 0,
                   right: 0,
-                  top:1,
+                  top: 1,
                   child: Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Text(
@@ -115,7 +133,8 @@ class NewsUI extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Text(
-                      detailNewsLogice.allNews[index].description ?? "No Description",
+                      detailNewsLogice.allNews[index].description ??
+                          "No Description",
                       style: TextStyle(color: Colors.white, fontSize: 17),
                       maxLines: 3,
                       overflow: TextOverflow.ellipsis,

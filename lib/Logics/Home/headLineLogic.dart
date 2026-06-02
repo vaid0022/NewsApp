@@ -66,4 +66,11 @@ class NewsHeadLine {
   }
 
 
+  static void Reset(){
+    isLoading=false;
+    hasMoreData=true;
+    HeadLinesNews.clear();
+    pageController.dispose();
+  }
+
 }

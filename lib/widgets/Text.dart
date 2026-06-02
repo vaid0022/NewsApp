@@ -6,13 +6,16 @@ class TextPadding extends StatelessWidget {
   bool isBold;
   double? fontSize;
   Color? color;
-
+  int? lines;
+bool isLines;
   TextPadding({
     required this.padding,
     required this.text,
     required this.isBold,
     this.fontSize,
     this.color,
+    this.lines,
+    required this.isLines
   });
   @override
   Widget build(BuildContext context) {
@@ -25,6 +28,8 @@ class TextPadding extends StatelessWidget {
           fontSize: fontSize,
           color: color,
         ),
+        maxLines: lines,
+        overflow:isLines == true ? TextOverflow.ellipsis : null,
       ),
     );
   }

@@ -94,13 +94,15 @@ class detailNewsLogice {
   }
 
 static void setpagination({required VoidCallback RefreshUI}){
-    scrollController.addListener((){
-      if(scrollController.position.pixels >= scrollController.position.maxScrollExtent - 100){
-        FetchData().then((_){
+
+    scrollController.addListener(()async{
+      if(scrollController.position.pixels >= scrollController.position.maxScrollExtent - 200){
+      await  FetchData().then((_){
           RefreshUI();
         });
       }
     });
+
 }
 
 static void Reset(){
@@ -108,6 +110,11 @@ static void Reset(){
     isHasMoreData =true;
     allNews.clear();
     nextPage =null;
+
+    if(scrollController.hasClients){
+      scrollController.dispose();
+    }
+    scrollController = ScrollController();
 }
 
 
