@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:newsspp/Model/HeadLineNews.dart';
+import 'package:newsspp/Service/sharedPrefrence.dart';
+import 'package:newsspp/screens/Catagories.dart';
 import 'package:newsspp/screens/DetailPage.dart';
+import 'package:newsspp/screens/Setting.dart';
 import 'package:newsspp/widgets/shimmerWidget.dart';
+import 'package:provider/provider.dart';
 import '../Logics/Home/HomeLogic.dart';
 import '../Logics/Home/headLineLogic.dart';
 
@@ -16,6 +20,7 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
   void initState() {
     super.initState();
+    sharedprefrence.GetTheme(context: context);
     Homeinit();
     NewsHeadLine.FetchHeadlineNews().then((value) {
       setState(() {});
@@ -33,12 +38,30 @@ class _HomepageState extends State<Homepage> {
       });
     });
   }
-
   @override
+   String selected = "Setting";
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Home",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
+        actions: [
+          PopupMenuButton(itemBuilder: (_){
+            return [
+              PopupMenuItem(child: Row(
+                children: [
+                    Icon(Icons.settings),
+                  Text("Setting")
+                ],
+              ),onTap: (){
+                Navigator.push((context), MaterialPageRoute(builder: (context)=>Setting()));
+              },)
+            ];
+          })
+        ],
+      ),
       body: RefreshIndicator.adaptive(
         onRefresh: ()async{
+
           Homelogic.Reset();
           NewsHeadLine.Reset();
          await Future.wait([
@@ -49,7 +72,7 @@ class _HomepageState extends State<Homepage> {
             setState(() {
             });
           }
-        },
+          },
         child: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Column(

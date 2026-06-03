@@ -51,7 +51,7 @@ class _CatagoriesState extends State<Catagories> {
         child: Column(
           children: [
             Container(
-              height: 220,
+              height: 250,
               width: double.infinity,
               child: Card(
                 elevation: 4,
@@ -268,7 +268,7 @@ class Cata extends StatelessWidget {
                   child: Container(
                     child: Column(
                       children: [
-                        TextPadding(
+                        CustomWidget.TextPadding(
                           text:
                               CatagoriesLogic.allNews[index].title ??
                               "Tital is Not Available",
@@ -278,7 +278,7 @@ class Cata extends StatelessWidget {
                           lines: 2,
                           isLines: true,
                         ),
-                        TextPadding(
+                        CustomWidget.TextPadding(
                           text:
                               CatagoriesLogic.allNews[index].description ??
                               "Tital is Not Available",

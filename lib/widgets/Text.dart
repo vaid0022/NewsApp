@@ -1,11 +1,13 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:newsspp/Providers/Provider.dart';
+import 'package:provider/provider.dart';
 
 class TextPadding extends StatelessWidget {
   double padding;
   String text;
   bool isBold;
   double? fontSize;
-  Color? color;
   int? lines;
 bool isLines;
   TextPadding({
@@ -13,7 +15,6 @@ bool isLines;
     required this.text,
     required this.isBold,
     this.fontSize,
-    this.color,
     this.lines,
     required this.isLines
   });
@@ -26,7 +27,7 @@ bool isLines;
         style: TextStyle(
           fontWeight: isBold ? FontWeight.bold : FontWeight(1),
           fontSize: fontSize,
-          color: color,
+           color:  Colors.black
         ),
         maxLines: lines,
         overflow:isLines == true ? TextOverflow.ellipsis : null,

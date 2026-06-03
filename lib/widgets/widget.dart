@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:newsspp/Providers/Provider.dart';
+import 'package:provider/provider.dart';
 
 class CustomWidget{
   static Widget choiceChip({required String value,required ValueChanged<bool> valueChanged,required var selected}){
@@ -17,4 +19,25 @@ class CustomWidget{
       onSelected: valueChanged
     );
   }
+
+  static Widget TextPadding({
+    required double padding,
+    required String text,
+    required bool isBold,
+    double? fontSize,
+    int? lines,
+    required bool isLines,
+  }){
+    return Padding(
+        padding: EdgeInsetsGeometry.all(padding),
+        child: Text(
+          text,
+          style: TextStyle(
+              fontWeight: isBold ? FontWeight.bold : FontWeight(1),
+              fontSize: fontSize,
+          ),
+          maxLines: lines,
+          overflow:isLines == true ? TextOverflow.ellipsis : null,
+        ));
+        }
 }

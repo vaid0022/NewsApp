@@ -25,8 +25,7 @@ class _HomeState extends State<Home> {
   ];
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          title: Text('NewsApp'), centerTitle: true),
+
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: _SelectedIndex,
           onTap: _BottomNavigationBar,

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:newsspp/widgets/Text.dart';
+import 'package:newsspp/widgets/widget.dart';
 
 import '../Logics/Catagory/CatagoriesLogic.dart';
 
@@ -24,6 +25,27 @@ class CDetail extends StatelessWidget {
                 image: DecorationImage(
                   image: NetworkImage(news[index].imageUrl.toString()),
                   fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            Positioned(
+              top: 30,
+              left: 10,
+              child: Container(
+                height: 50,
+                width: 50,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(100),
+                  color: Colors.white.withOpacity(0.4),
+                ),
+                child: Center(
+                  child: IconButton(
+                    onPressed: () => Navigator.pop(context),
+                    icon: Icon(
+                      Icons.arrow_back_ios_new_outlined,
+                      color: Colors.black,
+                    ),
+                  ),
                 ),
               ),
             ),

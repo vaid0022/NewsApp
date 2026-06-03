@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:newsspp/widgets/Text.dart';
+import 'package:newsspp/widgets/widget.dart';
 import '../Logics/Home/HomeLogic.dart';
 import '../Logics/Home/headLineLogic.dart';
 
@@ -85,7 +86,7 @@ class Detail extends StatelessWidget {
                                       ),
 
                                       SizedBox(height: 20),
-                                      TextPadding(
+                                     TextPadding(
                                         padding: 20,
                                         text: isHeadline
                                             ? Headline[index].description.toString()
